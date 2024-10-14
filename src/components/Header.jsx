@@ -130,7 +130,7 @@ function Header() {
     // const [open, setopen] = useState({})
     return (
         <>
-            <header className='bg-white w-screen'>
+            <header className='bg-white w-full'>
                 <ul className='flex items-center justify-end me-16'>
                     {navItems.map((element) => {
                         return (
@@ -193,7 +193,7 @@ function Header() {
                                         </>
                                     )
                                 })}
-                                <button className='bg-[rgb(1,49,183)] ms-4 text-white px-4 py-2 rounded-3xl'>{element.callToAction}</button>
+                                <button className='bg-[rgb(1,49,183)] hover:bg-blue-700 transition-all duration-200 ease-in-out ms-4 text-white px-4 py-2 rounded-3xl'>{element.callToAction}</button>
                             </>
                         )
                     })}
