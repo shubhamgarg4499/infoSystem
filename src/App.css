@@ -150,6 +150,7 @@
 }
 
 .slick-dots {
-    bottom: 10px;
+    position: static !important;
+    /* bottom: 10px; */
     /* Adjust the position if needed */
 }

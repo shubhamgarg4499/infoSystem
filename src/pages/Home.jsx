@@ -97,12 +97,98 @@ function Home() {
 
     ]
 
+    let testimonials = [
+        {
+            logo: "smyllo.png",
+            CompanyName: "Social Media App",
+            review: `Discovering Hyperlink Infosystem is no doubt one of
+        the highlights of my 2018. They took my idea and
+        brought it to life, beautifully. The team assigned to
+        me was diligent, responsive & patient. They did not
+        try to rush the process so that they could quickly
+        jump onto a new client, instead they treated my app
+        with care as if it was their own. I would highly
+        recommend Hyperlink Infosystem to anyone looking
+        to build something special.`,
+            name: "Social Media App",
+            designation: "CEO & Founder",
+            country: "Kenya",
+            countryFlag: "🏁",
+            start: 5
+        },
+        {
+            logo: "oh-my-help.png",
+            CompanyName: "ohMyHelp",
+            review: `To the teams of Hyperlink Infosystem - excellent job
+            done with very smooth and responsive
+            communication! The teams are very knowledgeable
+            and had given us lots of valuable advices.`,
+            name: "Ivan Lau",
+            designation: "CEO & Founder",
+            country: "Hong Kong",
+            countryFlag: "🏁",
+            stars: 5
+        },
+        {
+            logo: "skkyn.png",
+            CompanyName: "Skkyn Technologies",
+            review: `Thoughtfully integrating consumer feedback to
+            improve the UX/UI, Hyperlink InfoSystem has
+            developed a series of consistently improved mobile
+            app iterations. Their competitive pricing structure
+            pairs value with cost savings. The project manager
+            was exceptionally skilled and communicative.`,
+            name: "Sujai Soy",
+            designation: "CEO & Founder",
+            country: "Dubai,UAE",
+            countryFlag: "🏁",
+            stars: 5
+        }
+        ,
+        {
+            logo: "skkyn.png",
+            CompanyName: "Skkyn Technologies",
+            review: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem quas optio quae provident assumenda enim corporis reprehenderit facilis officia a.`,
+            name: "Sujai Soy",
+            designation: "CEO & Founder",
+            country: "Dubai,UAE",
+            countryFlag: "🏁",
+            stars: 5
+        }
+
+    ]
+
+    let DelieveredProjects = [
+        { icon: "apps-developed-icon.png", projectsDone: "4500+", service: "App Developed" },
+        { icon: "developers-icon.png", projectsDone: "1200+", service: "Developers" },
+        { icon: "website-designed-icon.png", projectsDone: "2200+", service: "Websites Designed" },
+        { icon: "games-developed-icon.png", projectsDone: "140+", service: "Games Developed" },
+        { icon: "ai-iot-solutions-icon.png", projectsDone: "120+", service: "AI & Iot Solutions" },
+        { icon: "happy-clients-icon.png", projectsDone: "2700+", service: "Happy Clients" },
+        { icon: "salesforce-solutions-icon.png", projectsDone: "120+", service: "Salesforce Solutions" },
+        { icon: "data-science-icn.png", projectsDone: "40+", service: "Data Science" },
+    ]
     var settings = {
         dots: true,
         infinite: false,
         speed: 500,
         slidesToShow: 3.2,
         slidesToScroll: 3,
+        autoplay: true,
+        // speed: 2000,
+        autoplaySpeed: 5000,
+    };
+    var reviewsSlider = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: true,
+        arrows: true,
+        draggable: true
+        // speed: 2000,
+        // autoplaySpeed: 5000,
     };
     return (
         <>
@@ -254,6 +340,7 @@ function Home() {
 
 
 
+            {/* lifecycle section starts */}
             <div className='w-3/4 px-24 my-20'>
                 <HeadPara heading={"Offering Exclusive Edge Following Custom Software Development Lifecycle"} paragraph={"Customizing and delivering cutting-edge solutions employing the custom software development lifecycle to help businesses meet their future demands"} lineClass={"h-[0.8px]"} headingClass={"text-3xl poppins-bold leading-10"} />
             </div>
@@ -262,6 +349,8 @@ function Home() {
             <div className='w-full px-24'>
                 <IdeationSlider />
             </div>
+            {/* lifecycle section ends here */}
+
 
 
             <div className='w-2/4 mx-auto my-16'>
@@ -274,11 +363,87 @@ function Home() {
                 <Slider {...settings}>
                     {expertise.map((element, index) => {
                         return (<>
-                            <Card bgUrl={`assets/${element.imgLink}`} para={element.subhead} heading={element.title} className={"w-full"} />
+                            <Card bgUrl={`assets/${element.imgLink}`} para={element.subhead} heading={element.title} className={"w-full py-20 px-14"} />
                         </>)
                     })}
                 </Slider>
             </div>
+            {/* slider ends  here */}
+
+
+            {/* our work section */}
+
+            <HeadingParagraph heading={"The Glimpse Of The Solutions We Have Created For Our Global Clients"} paragraph={"Being a leading IT company, we make sure to build innovative and custom solutions. Know about the journey we travel with our clients to turn their ideas into perfect tailored solutions."} buttonText={"Our Work"} buttonClass={"my-6"} className={"my-20"} />
+
+
+            {/* our work section ends here*/}
+
+
+            {/* testimonials section starts */}
+            <div className='w-full text-center mx-auto'>
+                <HeadPara heading={"What Our Clients Say"} headingClass={"text-4xl poppins-semibold"} className={"text-center"} paragraph={"Collection of responses we have got so far by delivering exceptional solutions."} lineClass={"mx-auto my-6 w-[5%]"} />
+            </div>
+
+            <div className='w-4/5 mx-auto' >
+                <Slider {...reviewsSlider}>
+                    {testimonials.map(element => {
+                        return (<>
+                            <div className='aspect-square bg-white shadow-xl p-8 flex flex-col justify-around' style={{ backgroundImage: `Url("assets/quote.png")`, backgroundRepeat: "no-repeat", backgroundSize: "20%", backgroundColor: `rgba(255, 255, 255, 0.9)`, backgroundBlendMode: "overlay", backgroundPositionY: "20%", backgroundPositionX: "10%" }}>
+                                <div className='flex items-center h-[10%]'>
+                                    <img src={`assets/testimonialsImages/${element.logo}`} alt={element.country} className={'w-12'} />
+                                    <div className='mx-3'>
+                                        <h2 className='poppins-semibold'>{element.CompanyName}</h2>
+                                        <p className='text-xs'>⭐⭐⭐⭐⭐ 5.0 Ratings</p>
+                                    </div>
+                                </div>
+
+                                <div className='my-12 h-[80%]'>
+                                    <p className='poppins-light text-sm leading-relaxed'>{element.review}</p>
+                                </div>
+
+                                <div className='flex h-[10%]'>
+                                    <div>
+                                        <h1 className='poppins-semibold texst-sm'>{element.name}</h1>
+                                        <p className='poppins-light text-sm'>{element.designation}</p>
+                                    </div>
+                                    <div className='text-left ms-10'>
+                                        <h1 className='poppins-semibold text-sm'>{element.countryFlag + element.country}</h1>
+                                        <p className='poppins-light text-sm'>Country</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </>)
+                    })}
+                </Slider>
+            </div>
+
+            {/* testimonials section ends here */}
+
+
+            {/* projects done by company section starts from here */}
+
+            <div className='w-4/5 mx-auto my-24'>
+                <HeadPara heading={"iClimb Brings Transformation for Businesses "} paragraph={"Starting from listening to your business problems to delivering accurate solutions; we make sure to follow industry-specific standards and combine them with our technical knowledge, development expertise, and extensive research."} headingClass={"text-3xl"} paraClass={"w-3/4"} />
+            </div>
+
+            <div className='w-4/5 mx-auto flex flex-wrap'>
+                {DelieveredProjects.map(element => {
+                    return (
+                        <>
+                            <div className='w-1/4 flex'>
+                                <div>
+                                    <img src={`assets/deliveredProjects/${element.icon}`} alt="" />
+                                </div>
+                                <div>
+                                    <h1>{element.projectsDone}</h1>
+                                    <p>{element.service}</p>
+                                </div>
+                            </div>
+                        </>
+                    )
+                })}
+            </div>
+
 
         </>
     )
