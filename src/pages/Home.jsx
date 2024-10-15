@@ -422,21 +422,21 @@ function Home() {
 
             {/* projects done by company section starts from here */}
 
-            <div className='w-4/5 mx-auto my-24'>
-                <HeadPara heading={"iClimb Brings Transformation for Businesses "} paragraph={"Starting from listening to your business problems to delivering accurate solutions; we make sure to follow industry-specific standards and combine them with our technical knowledge, development expertise, and extensive research."} headingClass={"text-3xl"} paraClass={"w-3/4"} />
+            <div className='w-4/5 my-24 '>
+                <HeadPara heading={"iClimb Brings Transformation for Businesses "} paragraph={"Starting from listening to your business problems to delivering accurate solutions; we make sure to follow industry-specific standards and combine them with our technical knowledge, development expertise, and extensive research."} headingClass={"text-3xl"} />
             </div>
 
-            <div className='w-4/5 mx-auto flex flex-wrap'>
+            <div className='w-4/5 flex flex-wrap gap-10 mx-auto justify-center'>
                 {DelieveredProjects.map(element => {
                     return (
                         <>
-                            <div className='w-1/4 flex'>
-                                <div>
-                                    <img src={`assets/deliveredProjects/${element.icon}`} alt="" />
+                            <div className='w-1/5 flex shadow-gray-200 shadow-lg aspect-video justify-evenly'>
+                                <div className='w-1/5 my-auto'>
+                                    <img src={`assets/deliveredProjects/${element.icon}`} alt="" className='w-[100%] aspect-square' />
                                 </div>
-                                <div>
-                                    <h1>{element.projectsDone}</h1>
-                                    <p>{element.service}</p>
+                                <div className='my-auto '>
+                                    <h1 className='text-3xl poppins-semibold'>{element.projectsDone}</h1>
+                                    <p className='poppins-regular text-xs'>{element.service}</p>
                                 </div>
                             </div>
                         </>
