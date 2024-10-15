@@ -142,3 +142,14 @@
     /* transform: scale(1.1); */
     transition: all 1.5s ease-in !important;
 }
+
+.slick-slide>div {
+    width: 90%;
+    /* background-color: red; */
+    /* gap: 10px; */
+}
+
+.slick-dots {
+    bottom: 10px;
+    /* Adjust the position if needed */
+}

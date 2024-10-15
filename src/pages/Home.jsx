@@ -1,8 +1,12 @@
 import React from 'react'
+import Card from '../utils/Card'
 import CircleButton from '../utils/CircleButton'
 import HeadingParagraph from '../utils/Heading&Paragraph'
 import HeadPara from '../utils/HeadPara'
 import IdeationSlider from '../utils/IdeationSlider'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function Home() {
     let logos = ["zydus-life.png", "art-of-living.png", "astral.png", "emaar.png", 'google.png', "npci.png", "viacom-media.png", "zydus-life.png"]
@@ -68,6 +72,38 @@ function Home() {
         }
     ]
 
+
+    let expertise = [
+        {
+            title: "Education & e-Learning",
+            subhead: "Enhance the learning experience for global learners through tech-driven solutions.",
+            imgLink: "cee1b9f5b6076b2de6d084ac0fe23f6d.jpeg"
+        },
+        {
+            title: "Healthcare & Fitness",
+            subhead: "Leveraging smart technologies like AI, ML, IoT, and more to empower global health organizations.",
+            imgLink: "stethoscope.jpg"
+        },
+        {
+            title: "Logistics & Distribution",
+            subhead: "Bring your logistic industry-specific development requirements to get unique customer-centric solutions.",
+            imgLink: "logistics.jpg"
+        },
+        {
+            title: "Social Networking",
+            subhead: "Build engaging and seasoned social media applications that can offer a unique user experience.",
+            imgLink: "SocialNetworking.webp"
+        },
+
+    ]
+
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3.2,
+        slidesToScroll: 3,
+    };
     return (
         <>
             {/* /////// hero section starts from here////////////////////// */}
@@ -233,9 +269,17 @@ function Home() {
                 <CircleButton text={"Industries we Serve"} className={"my-6"} />
             </div>
 
-
-
             {/* slider starts from here */}
+            <div className='w-full mx-auto overflow-x-hidden'>
+                <Slider {...settings}>
+                    {expertise.map((element, index) => {
+                        return (<>
+                            <Card bgUrl={`assets/${element.imgLink}`} para={element.subhead} heading={element.title} className={"w-full"} />
+                        </>)
+                    })}
+                </Slider>
+            </div>
+
         </>
     )
 }
