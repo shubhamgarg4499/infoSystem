@@ -388,7 +388,7 @@ function Home() {
                 <Slider {...reviewsSlider}>
                     {testimonials.map(element => {
                         return (<>
-                            <div className='aspect-square bg-white shadow-xl p-8 flex flex-col justify-around' style={{ backgroundImage: `Url("assets/quote.png")`, backgroundRepeat: "no-repeat", backgroundSize: "20%", backgroundColor: `rgba(255, 255, 255, 0.9)`, backgroundBlendMode: "overlay", backgroundPositionY: "20%", backgroundPositionX: "10%" }}>
+                            <div className='aspect-square bg-white shadow-lg p-8 flex flex-col justify-around' style={{ backgroundImage: `Url("assets/quote.png")`, backgroundRepeat: "no-repeat", backgroundSize: "20%", backgroundColor: `rgba(255, 255, 255, 0.9)`, backgroundBlendMode: "overlay", backgroundPositionY: "20%", backgroundPositionX: "10%" }}>
                                 <div className='flex items-center h-[10%]'>
                                     <img src={`assets/testimonialsImages/${element.logo}`} alt={element.country} className={'w-12'} />
                                     <div className='mx-3'>
@@ -422,7 +422,7 @@ function Home() {
 
             {/* projects done by company section starts from here */}
 
-            <div className='w-4/5 my-24 '>
+            <div className='w-4/5 my-24 mx-auto'>
                 <HeadPara heading={"iClimb Brings Transformation for Businesses "} paragraph={"Starting from listening to your business problems to delivering accurate solutions; we make sure to follow industry-specific standards and combine them with our technical knowledge, development expertise, and extensive research."} headingClass={"text-3xl"} />
             </div>
 
@@ -444,7 +444,19 @@ function Home() {
                 })}
             </div>
 
+            {/* projects done by company section ends  here */}
 
+
+
+            <div className='my-24 mx-auto w-3/4 aspect-[16/5] ' style={{ backgroundImage: "Url(assets/bannerImage.jpeg)", backgroundRepeat: "no-repeat", backgroundPosition: 'center', backgroundSize: "cover" }}>
+                <div className='mx-14'>
+                    <button className=' rounded-2xl w-[15%] text-black border-none py-2 poppins-semibold  text-sm bg-white my-8'>200+ Business</button>
+                    <HeadPara heading={"Let's create Big stories Together!"} paragraph={"Share your project details to build your path towards success."} className={"text-white "}
+                        lineClass={"bg-white mt-6 mb-6 w-[8%]"} headingClass={"poppins-bold text-4xl"} />
+
+                    <CircleButton text={"Get a Quote"} borderClass={"border-white border-3"} arrowClass={"text-white"} textClass={"text-white poppins-thin"} className={"my-10"} />
+                </div>
+            </div>
         </>
     )
 }

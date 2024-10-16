@@ -10,7 +10,7 @@ function CircleButton({ borderClass, arrowClass, text, textClass, className }) {
                     <p><i class={`fa-solid fa-arrow-right-long absolute left-[80%] top-[50%] translate-y-[-50%] text-2xl group-hover:left-[120%]  transition-all ease-in-out duration-150  ${arrowClass && arrowClass}`}></i></p>
                 </div>
 
-                <div className={`mx-9 poppins-regular ${textClass && textClass}`}>{text}</div>
+                <div className={`mx-9  poppins-regular  ${textClass && textClass}`}>{text}</div>
 
             </div>
 
